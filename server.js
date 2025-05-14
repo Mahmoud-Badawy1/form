@@ -75,7 +75,7 @@ app.get('/reserved-options', async (req, res) => {
 app.get('/option-stats', async (req, res) => {
   try {
     const stats = await User.aggregate([
-      { $group: { _id: "$option", count: { $sum: 2 } } }
+      { $group: { _id: "$option", count: { $sum: 1 } } }
     ]);
     res.json(stats);
   } catch (error) {
